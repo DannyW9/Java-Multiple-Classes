@@ -44,4 +44,29 @@ public class LibraryTest {
         library.addBook(book4);
         assertEquals(3, library.countCollection());
     }
+
+    @Test
+    public void canRemoveBook() {
+        library.addBook(book);
+        library.removeBook(book);
+        assertEquals(0, library.countCollection());
+    }
+
+    @Test
+    public void bookIsCurrentlyAvailable() {
+        library.addBook(book);
+        assertEquals(true, library.bookAvailable(book));
+    }
+
+    @Test
+    public void bookIsNotCurrentlyAvailable() {
+        assertEquals(false, library.bookAvailable(book));
+    }
+
+    @Test
+    public void canRemoveAndReturnABook() {
+        library.addBook(book);
+        assertEquals(book, library.removeAndReturnBook(book));
+        assertEquals(0, library.countCollection());
+    }
 }

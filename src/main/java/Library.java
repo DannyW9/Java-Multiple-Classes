@@ -23,4 +23,19 @@ public class Library {
             this.bookCollection.add(book);
         }
     }
+
+    public void removeBook(Book book) {
+        this.bookCollection.remove(book);
+    }
+
+    public Book removeAndReturnBook(Book book){
+        int index = this.bookCollection.indexOf(book);
+        Book borrowedBook =  this.bookCollection.remove(index);
+        return borrowedBook;
+    }
+
+    public boolean bookAvailable(Book book){
+       return this.bookCollection.contains(book);
+    }
 }
+
