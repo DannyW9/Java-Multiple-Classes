@@ -69,4 +69,12 @@ public class LibraryTest {
         assertEquals(book, library.removeAndReturnBook(book));
         assertEquals(0, library.countCollection());
     }
+
+    @Test
+    public void canCountByGenre() {
+        library.addBook(book);
+        library.addBook(book2);
+        library.addBook(book2);
+        assertEquals(2, library.trackByGenre().size());
+    }
 }
